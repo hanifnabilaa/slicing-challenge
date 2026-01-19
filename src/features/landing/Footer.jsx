@@ -1,47 +1,60 @@
-import React from 'react';
+import React from "react";
+import FooterLinkColumn from "./components/FooterLinkColumn";
 
 const Footer = () => {
-    return (
-        <footer className="footer">
-            <div className="container footer__inner">
-                <div className="footer__brand">
-                    <div className="brand brand--footer">
-                        <span className="brand__logo" aria-hidden="true">◇</span>
-                        <span className="brand__text">Idaz</span>
-                    </div>
-                    <p className="footer__text">A simple page for slicing into React components.</p>
-                </div>
+  return (
+    <footer className="footer">
+      <div className="container footer__inner">
+        <div className="footer__brand">
+          <div className="brand brand--footer">
+            <span className="brand__logo" aria-hidden="true">
+              ◇
+            </span>
+            <span className="brand__text">Idaz</span>
+          </div>
+          <p className="footer__text">
+            A simple page for slicing into React components.
+          </p>
+        </div>
 
-                <div className="footer__links">
-                    <div className="link-col">
-                        <div className="link-col__title">Product</div>
-                        <a className="link" href="#features">Features</a>
-                        <a className="link" href="#pricing">Pricing</a>
-                        <a className="link" href="#faq">FAQ</a>
-                    </div>
+        <div className="footer__links">
+          <FooterLinkColumn
+            title="Product"
+            links={[
+              { href: "#features", text: "Features" },
+              { href: "#pricing", text: "Pricing" },
+              { href: "#faq", text: "FAQ" },
+            ]}
+          />
 
-                    <div className="link-col">
-                        <div className="link-col__title">Company</div>
-                        <a className="link" href="#">About</a>
-                        <a className="link" href="#">Careers</a>
-                        <a className="link" href="#">Contact</a>
-                    </div>
+          <FooterLinkColumn
+            title="Company"
+            links={[
+              { href: "#about", text: "About" },
+              { href: "#careers", text: "Careers" },
+              { href: "#contact", text: "Contact" },
+            ]}
+          />
 
-                    <div className="link-col">
-                        <div className="link-col__title">Resources</div>
-                        <a className="link" href="#">Docs</a>
-                        <a className="link" href="#">Community</a>
-                        <a className="link" href="#">Support</a>
-                    </div>
-                </div>
-            </div>
+          <FooterLinkColumn
+            title="Resources"
+            links={[
+              { href: "#docs", text: "Docs" },
+              { href: "#community", text: "Community" },
+              { href: "#support", text: "Support" },
+            ]}
+          />
+        </div>
+      </div>
 
-            <div className="container footer__bottom">
-                <span>© 2026 Idaz. All rights reserved.</span>
-                <span className="footer__small">Made for HTML/CSS slicing practice.</span>
-            </div>
-        </footer>
-    );
+      <div className="container footer__bottom">
+        <span>© 2026 Idaz. All rights reserved.</span>
+        <span className="footer__small">
+          Made for HTML/CSS slicing practice.
+        </span>
+      </div>
+    </footer>
+  );
 };
 
 export default Footer;
